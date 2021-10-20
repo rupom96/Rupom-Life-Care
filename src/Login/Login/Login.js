@@ -13,20 +13,22 @@ const Login = () => {
 
     const handleEmail = e => {
         setEmail(e.target.value);
+        console.log(email);
     }
     const handlePassword = e => {
         setPassword(e.target.value);
     }
 
 
-    const processLogin = () => {
+    const processLogin = e => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
 
             })
             .catch(error => {
                 setError(error.message)
-            })
+            });
+        e.preventDefault();
 
     }
 
@@ -46,14 +48,14 @@ const Login = () => {
                     <div className="w-50 container">
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                            <input onBlur={handleEmail} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                            <input onBlur={handleEmail} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required />
                         </div>
                     </div>
                     <br />
                     {/* password */}
                     <div className="w-50">
                         <label htmlFor="inputPassword2" className="form-label">Password</label>
-                        <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword2" placeholder="Password" />
+                        <input onBlur={handlePassword} type="password" className="form-control" id="inputPassword2" placeholder="Password" required />
                     </div>
 
                     {/* Submit button */}
