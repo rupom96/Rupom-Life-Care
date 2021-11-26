@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const Registration = () => {
-    const { signInUsingGoogle } = useAuth();
+    // const { signInUsingGoogle } = useAuth();
 
 
     const [name, setName] = useState('');
@@ -19,7 +19,7 @@ const Registration = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
 
-                setUserName();
+                updateProfile(auth.currentUser, { displayName: name })
             })
             .catch((error) => {
                 setError(error.message)
@@ -28,10 +28,10 @@ const Registration = () => {
 
     }
 
-    const setUserName = () => {
-        updateProfile(auth.currentUser, { displayName: name })
-            .then(result => { })
-    }
+    // const setUserName = () => {
+    //     updateProfile(auth.currentUser, { displayName: name })
+    //         .then(result => { })
+    // }
 
     const handleName = e => {
         setName(e.target.value);
@@ -94,9 +94,9 @@ const Registration = () => {
 
             <div>-------------------------</div>
 
-            <br /><br /><br />
+            {/* <br /><br /><br />
             <p>OR</p>
-            <button onClick={signInUsingGoogle} className="btn btn-primary">Google Sign In</button>
+            <button onClick={signInUsingGoogle} className="btn btn-primary">Google Sign In</button> */}
         </div>
 
     );

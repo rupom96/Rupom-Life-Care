@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 

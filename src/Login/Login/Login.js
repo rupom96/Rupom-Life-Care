@@ -65,7 +65,7 @@ const Login = () => {
                     </div>
                     {/* error message */}
 
-                    <div className="row mt-2 text-danger">{error}</div>
+                    <div className="row container mt-2 text-danger">{error}</div>
 
 
                 </form>

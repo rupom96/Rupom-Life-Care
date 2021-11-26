@@ -8,11 +8,6 @@ const Details = () => {
 
     const { serviceId } = useParams();
     const [data] = useData();
-
-    // let found = data.find(e => e.id === "serviceId");
-    console.log(data);
-    console.log(parseInt(serviceId));
-
     let found = data?.find(e => e.id === parseInt(serviceId));
 
 

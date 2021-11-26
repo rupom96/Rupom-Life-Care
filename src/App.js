@@ -15,11 +15,13 @@ import AuthProvider from './contexts/AuthProvider';
 import Login from './Login/Login/Login';
 import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
 import Registration from './Login/Registration/Registration';
-import useData from './hooks/useData';
+
+
 
 function App() {
 
-  const [data] = useData();
+
+
 
   return (
     <div className="App">
@@ -32,10 +34,12 @@ function App() {
 
               <Header></Header>
 
+
               <Switch>
 
                 <Route exact path="/">
                   <Home></Home>
+
                 </Route>
 
                 <Route path="/home">
@@ -63,7 +67,7 @@ function App() {
                 </Route>
 
                 <PrivateRoute path="/details/:serviceId">
-                  <Details data={data}></Details>
+                  <Details></Details>
                 </PrivateRoute>
 
 
